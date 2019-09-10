@@ -1,5 +1,6 @@
 package com.groupc.pt.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,12 +27,19 @@ public class UserServiceImp implements UserService {
 
    @Override
    public User getU(long id) {
-      return UserDao.get(id);
+     User u1 = UserDao.get(id);
+     u1.setPassword("************");
+     return u1;
    }
 
    @Override
-   public List<User> userlist() {
-      return UserDao.list();
+   public List<String> userlist() {
+	   List<User> l1 =  UserDao.list();
+	   List<String> res = new ArrayList<>();
+	   for(int i = 0; i< l1.size();i++) {
+		   res.add(l1.get(i).getName());
+	   }
+	   return res;
    }
 
    @Transactional

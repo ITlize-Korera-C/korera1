@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity(name = "PRFieldValues")
@@ -13,9 +15,17 @@ public class PRFieldValues{
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
-   private long Fieldid;
+   private long fieldIde;
    private long ProjectResourceId;
    private long FieldValue;
+   
+	@ManyToOne
+	@JoinColumn(name = "Rowid")
+	private ProjectResource ProjectResource;
+	
+	@ManyToOne
+	@JoinColumn(name = "fieldId")
+	private Fields fields;
 
    public Long getId() {
       return id;
@@ -26,12 +36,12 @@ public class PRFieldValues{
    }
 
    public long getFieldId() {
-      return Fieldid;
+      return fieldIde;
    }
-
-   public void setFieldId(long name) {
-      this.Fieldid = name;
+   public void setFieldId(long fieldIde) {
+	   this.fieldIde = fieldIde;
    }
+   
 
    public long getProjectResourceId() {
       return ProjectResourceId;
@@ -48,5 +58,6 @@ public class PRFieldValues{
 	   public void setFieldValue(long FieldValue) {
 	      this.FieldValue = FieldValue;
 	   }
+
 
 }

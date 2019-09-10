@@ -39,8 +39,8 @@ public class UserController{
 
    /*---get all users---*/
    @GetMapping("/user")
-   public ResponseEntity<List<User>> list() {
-      List<User> Users = newService.userlist();
+   public ResponseEntity<List<String>> list() {
+      List<String> Users = newService.userlist();
       return ResponseEntity.ok().body(Users);
    }
 

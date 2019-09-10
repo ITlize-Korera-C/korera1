@@ -20,6 +20,7 @@ com\groupc\pt\model\Projects.class
 com\groupc\pt\service\projectServiceImpl.class
 com\groupc\pt\config\WebConfig.class
 com\groupc\pt\controller\ResouceController.class
+com\groupc\pt\model\ProjectResource.class
 com\groupc\pt\service\FormulaserviceImpl.class
 com\groupc\pt\dao\projectDao.class
 com\groupc\pt\dao\PRFieldValuesDAOImpl.class

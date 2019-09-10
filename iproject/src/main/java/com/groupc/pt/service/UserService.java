@@ -8,7 +8,7 @@ public interface UserService {
 //user
    long save(User User);
    User getU(long id);
-   List<User> userlist();
+   List<String> userlist();
    void update(long id, User User);
    void deleteU(long id);
    Boolean autho(User user);

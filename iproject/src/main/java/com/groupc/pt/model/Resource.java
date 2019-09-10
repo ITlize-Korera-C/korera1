@@ -1,10 +1,14 @@
 package com.groupc.pt.model;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import org.springframework.stereotype.Repository;
 
@@ -15,16 +19,16 @@ public class Resource {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private long resId;
 	private long ResourceCode;
 	private String ResourceName;
 	
 	public Long getId() {
-		return id;
+		return resId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(Long resid) {
+		this.resId = resid;
 	}
 
 	public long getResourceCode() {

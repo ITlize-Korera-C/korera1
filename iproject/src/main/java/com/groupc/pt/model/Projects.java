@@ -13,15 +13,17 @@ public class Projects{
 
 	   @Id
 	   @GeneratedValue(strategy = GenerationType.IDENTITY)
-	   private Long id;
+	   private Long projId;
 	   private String name;
+	  
+
 
 	   public Long getId() {
-	      return id;
+	      return projId;
 	   }
 
 	   public void setId(Long id) {
-	      this.id = id;
+	      this.projId = id;
 	   }
 
 	   public String getName() {
@@ -32,4 +34,5 @@ public class Projects{
 	      this.name = name;
 	   }
 
+	  
 }

@@ -1,5 +1,6 @@
 package com.groupc.pt.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,13 @@ public class projectServiceImpl implements projectService{
 	@Override
 	public void deleteU(long id) {
 		 projectDao.deleteU(id);
+	}
+
+	@Override
+	public List<String> resList(Projects k) {
+		List<String> arr = new ArrayList<String>();
+		long id = k.getId();
+		return null;
 	}
 
 }
