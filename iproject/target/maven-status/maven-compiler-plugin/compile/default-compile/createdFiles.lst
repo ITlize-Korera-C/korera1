@@ -24,6 +24,7 @@ com\groupc\pt\model\ProjectResource.class
 com\groupc\pt\service\FormulaserviceImpl.class
 com\groupc\pt\dao\projectDao.class
 com\groupc\pt\dao\PRFieldValuesDAOImpl.class
+com\groupc\pt\service\formulaPage.class
 com\groupc\pt\service\PRFServiceImpl.class
 com\groupc\pt\config\AppConfig.class
 com\groupc\pt\controller\FieldsController.class

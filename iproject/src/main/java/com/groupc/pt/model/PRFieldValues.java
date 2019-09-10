@@ -15,12 +15,10 @@ public class PRFieldValues{
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
-   private long fieldIde;
-   private long ProjectResourceId;
    private long FieldValue;
    
 	@ManyToOne
-	@JoinColumn(name = "Rowid")
+	@JoinColumn(name = "ProjectResourceId")
 	private ProjectResource ProjectResource;
 	
 	@ManyToOne
@@ -36,20 +34,17 @@ public class PRFieldValues{
    }
 
    public long getFieldId() {
-      return fieldIde;
-   }
-   public void setFieldId(long fieldIde) {
-	   this.fieldIde = fieldIde;
+      return fields.getFieldId();
    }
    
 
+   
+
    public long getProjectResourceId() {
-      return ProjectResourceId;
+      return ProjectResource.getId();
    }
 
-   public void setProjectResourceId(long ProjectResourceId) {
-      this.ProjectResourceId = ProjectResourceId;
-   }
+
    
    public long getFieldValue() {
 	      return FieldValue;
@@ -58,6 +53,15 @@ public class PRFieldValues{
 	   public void setFieldValue(long FieldValue) {
 	      this.FieldValue = FieldValue;
 	   }
+
+	public void setFieldId(long fieldId) {
+		fields.setFieldId(fieldId);
+		
+	}
+
+	public void setProjectResourceId(long projectResourceId) {
+		ProjectResource.setId(projectResourceId);
+	}
 
 
 }

@@ -9,6 +9,6 @@ public interface projectService {
 	   Projects getU(long id);
 	   List<Projects> userlist();
 	   void update(long id, Projects Kuser);
-	   void deleteU(long id);
-	   List<String> resList(Projects k);
+	   void deleteU(long id);	
+//	   List<Projects> returnList(Projects p1);
 }

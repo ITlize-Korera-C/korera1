@@ -54,6 +54,9 @@ public class projectController {
 		   projectService.deleteU(id);
 	      return ResponseEntity.ok().body("project"+id+" has been deleted successfully.");
 	   }
-	   
+//	   
+//	   @GetMapping("/project/{id}")
+//	   public ResponseEntity<?> getProj
+//	   
 
 }

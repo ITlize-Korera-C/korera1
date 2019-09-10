@@ -9,31 +9,31 @@ public class ProjectResource{
 
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
-   private Long Rowid;
+   private Long ProjectResourceId;
    
    public ProjectResource() {};
    
    public Long getId() {
-	      return Rowid;
+	      return ProjectResourceId;
 	   }
 
 	   public void setId(Long id) {
-	      this.Rowid = id;
+	      this.ProjectResourceId = id;
 	   }
    
 	@ManyToOne
-	@JoinColumn(name = "resId")
+	@JoinColumn(name = "projId")
 	private Projects project;
 	
 	@ManyToOne
-	@JoinColumn(name = "projId")
+	@JoinColumn(name = "resId")
 	private Resource resource;
 	
-
 	
 	public void setProject(Projects projects) {
 		this.project = projects;
 	}
+
 	
 	public Projects getProject() {
 		return project;
@@ -46,5 +46,4 @@ public class ProjectResource{
 	public Resource getResource() {
 		return resource;
 	}
-	
 }

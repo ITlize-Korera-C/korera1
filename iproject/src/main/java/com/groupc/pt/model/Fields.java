@@ -30,8 +30,8 @@ public class Fields implements Serializable {
 		return fieldId;
 	}
 
-	public void setFieldId(int fieldId) {
-		this.fieldId = fieldId;
+	public void setFieldId(long fieldId2) {
+		this.fieldId = fieldId2;
 	}
 
 	public String getTypeOfField() {
