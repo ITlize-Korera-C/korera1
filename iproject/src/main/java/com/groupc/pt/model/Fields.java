@@ -11,8 +11,8 @@ public class Fields implements Serializable {
 
 	@Id
 	@Column(name = "fieldId")
-	private int fieldId;
-
+	private long fieldId;
+	
 	@Column(name = "fieldType")
 	private String typeOfField;
 
@@ -21,8 +21,12 @@ public class Fields implements Serializable {
 
 	@Column(name = "isVisible") //mark for frontEnd feature
 	private String isVisible;
-
-	public int getFieldId() {
+	
+	@OneToOne
+	@JoinColumn(name = "fieldId")
+	private Formulas formulas;
+	
+	public long getFieldId() {
 		return fieldId;
 	}
 

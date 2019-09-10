@@ -10,4 +10,5 @@ public interface projectService {
 	   List<Projects> userlist();
 	   void update(long id, Projects Kuser);
 	   void deleteU(long id);
+	   List<String> resList(Projects k);
 }

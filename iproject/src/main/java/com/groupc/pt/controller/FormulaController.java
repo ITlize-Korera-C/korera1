@@ -54,4 +54,5 @@ public class FormulaController {
 		   FormulaService.deleteU(id);
 	      return ResponseEntity.ok().body("Formula"+id+" has been deleted successfully.");
 	   }
+	   
 }
