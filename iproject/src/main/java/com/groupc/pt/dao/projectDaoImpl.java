@@ -11,7 +11,6 @@ import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.groupc.pt.model.ProjectResource;
 import com.groupc.pt.model.Projects;
 
 @Repository
@@ -55,16 +54,6 @@ public class projectDaoImpl implements projectDao{
 	      session.delete(Kuser);
 	      session.flush();
 	}
-//
-//	@Override
-//	public List<Projects> getProj(Projects pr1) {
-//		List<Projects> arr = new ArrayList<Projects>();
-//		Session session = sessionFactory.getCurrentSession();
-//		String sql = "select pr from ProjectResource where projId = :projId";
-//		Query<Projects> hsql = session.createQuery(sql);
-//		arr = hsql.setParameter("projId", pr1.getId()).getResultList();
-//		System.out.print("gogogo");
-//		return arr;
-//	}
+
 
 }

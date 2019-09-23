@@ -2,6 +2,7 @@ package com.groupc.pt.controller;
 
 import java.util.List;
 
+import org.hibernate.loader.custom.Return;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.groupc.pt.model.Fields;
 import com.groupc.pt.service.FieldsService;
+import com.groupc.pt.service.FormulaService;
 
 
 @RestController
@@ -22,10 +24,10 @@ public class FieldsController {
 		@Autowired
 		private FieldsService FieldService;
 	   /*---Add new user---*/
-	   @PostMapping("/Field")
-	   public ResponseEntity<?> save(@RequestBody Fields Kuser) {
-	      long id = FieldService.save(Kuser);
-	      return ResponseEntity.ok().body("New Field has been saved with ID:" + id);
+	   @PostMapping("/project/{projId}/field")
+	   public ResponseEntity<?> save(@PathVariable("projId")long projId,@RequestBody List<Fields> fields) {
+		   FieldService.saveAndUpdate(fields, projId);
+		   return ResponseEntity.ok().body("field has been saved");
 	   }
 	   
 
@@ -36,11 +38,10 @@ public class FieldsController {
 	      return ResponseEntity.ok().body(Kuser);
 	   }
 
-	   /*---get all users---*/
-	   @GetMapping("/Field")
-	   public ResponseEntity<List<Fields>> list() {
-	      List<Fields> Kusers = FieldService.userlist();
-	      return ResponseEntity.ok().body(Kusers);
+	   /*---get all fields---*/
+	   @GetMapping("/project/{projId}/field")
+	   public ResponseEntity<List<Fields>> getFields(@PathVariable("projId") long projId){
+		   return ResponseEntity.ok().body(FieldService.getFieldsByProject(projId));
 	   }
 
 	   /*---Update a user by id---*/

@@ -28,13 +28,13 @@ public class projectController {
 	   
 
 	   /*---Get a user by id---*/
-	   @GetMapping("/project/{id}/r")
+	   @GetMapping("/project/{id}")
 	   public ResponseEntity<Projects> get(@PathVariable("id") long id) {
 	      Projects Kuser = projectService.getU(id);
 	      return ResponseEntity.ok().body(Kuser);
 	   }
 
-	   /*---get all users---*/
+	  
 	   @GetMapping("/project")
 	   public ResponseEntity<List<Projects>> list() {
 	      List<Projects> Kusers = projectService.userlist();
@@ -54,9 +54,6 @@ public class projectController {
 		   projectService.deleteU(id);
 	      return ResponseEntity.ok().body("project"+id+" has been deleted successfully.");
 	   }
-//	   
-//	   @GetMapping("/project/{id}")
-//	   public ResponseEntity<?> getProj
-//	   
+
 
 }

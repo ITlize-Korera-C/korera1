@@ -29,12 +29,12 @@ public class projectServiceImpl implements projectService{
 	public List<Projects> userlist() {
 		return projectDao.list();
 	}
-
+	@Transactional
 	@Override
 	public void update(long id, Projects Kuser) {
 		projectDao.update(id, Kuser);
 	}
-
+	@Transactional
 	@Override
 	public void deleteU(long id) {
 		 projectDao.deleteU(id);

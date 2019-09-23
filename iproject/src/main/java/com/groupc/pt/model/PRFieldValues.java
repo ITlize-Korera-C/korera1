@@ -18,12 +18,14 @@ public class PRFieldValues{
    private long FieldValue;
    
 	@ManyToOne
-	@JoinColumn(name = "ProjectResourceId")
-	private ProjectResource ProjectResource;
+	@JoinColumn(name = "resId")
+	private Resource resource;
 	
 	@ManyToOne
 	@JoinColumn(name = "fieldId")
 	private Fields fields;
+	
+	
 
    public Long getId() {
       return id;
@@ -40,8 +42,8 @@ public class PRFieldValues{
 
    
 
-   public long getProjectResourceId() {
-      return ProjectResource.getId();
+   public long getResId() {
+      return resource.getId();
    }
 
 
@@ -57,10 +59,6 @@ public class PRFieldValues{
 	public void setFieldId(long fieldId) {
 		fields.setFieldId(fieldId);
 		
-	}
-
-	public void setProjectResourceId(long projectResourceId) {
-		ProjectResource.setId(projectResourceId);
 	}
 
 

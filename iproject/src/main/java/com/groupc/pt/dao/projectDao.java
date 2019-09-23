@@ -2,7 +2,6 @@ package com.groupc.pt.dao;
 
 import java.util.List;
 
-import com.groupc.pt.model.ProjectResource;
 import com.groupc.pt.model.Projects;
 import com.groupc.pt.model.User;
 
@@ -18,6 +17,5 @@ public interface projectDao {
 
 	   void deleteU(long id);
 	   
-//	   List<Projects> getProj(Projects pr1);
 
 }

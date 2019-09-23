@@ -47,7 +47,6 @@ public class PRFieldValuesDAOImpl implements PRFieldValuesDAO {
 	      Session session = sessionFactory.getCurrentSession();
 	      PRFieldValues newFieldValue = session.byId(PRFieldValues.class).load(id);
 	      newFieldValue.setFieldId(fl.getFieldId());
-	      newFieldValue.setProjectResourceId(fl.getProjectResourceId());
 	      newFieldValue.setFieldValue(fl.getFieldValue());
 	      session.flush();
 	}

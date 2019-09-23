@@ -5,11 +5,10 @@ import java.util.List;
 import com.groupc.pt.model.*;
 
 public interface FieldsService {
-//user
-   long save(Fields userField);
-   Fields getU(long id);
+   Fields getU(Long id);
    List<Fields> userlist();
-   void update(long id, Fields userField);
-   void deleteU(long id);
-
+   void update(Long id, Fields userField);
+   void deleteU(Long id);
+   List<Fields> getFieldsByProject(Long projectId);
+   void saveAndUpdate(List<Fields> fields, Long projId);
 }

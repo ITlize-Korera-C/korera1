@@ -2,6 +2,7 @@ package com.groupc.pt.controller;
 
 import java.util.List;
 
+import org.omg.CORBA.PUBLIC_MEMBER;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.groupc.pt.model.Resource;
 import com.groupc.pt.service.ResourceService;
-
 @RestController
 public class ResouceController {
 		@Autowired
@@ -54,4 +54,7 @@ public class ResouceController {
 		   ResouceService.deleteU(id);
 	      return ResponseEntity.ok().body("Resouce"+id+" has been deleted successfully.");
 	   }
+	   
 }
+	   
+
